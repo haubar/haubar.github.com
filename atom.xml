@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[kerker]]></title>
+  <title><![CDATA[卡在中間的開發日誌]]></title>
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.kerker.in/"/>
-  <updated>2014-12-25T14:52:38.745Z</updated>
+  <updated>2014-12-29T15:21:22.105Z</updated>
   <id>http://blog.kerker.in/</id>
   
   <author>
-    <name><![CDATA[John Doe]]></name>
-    
+    <name><![CDATA[haubar]]></name>
+    <email><![CDATA[haubarclack@gmail.com]]></email>
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
