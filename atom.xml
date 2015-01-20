@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[卡在中間的開發日誌]]></title>
-  <subtitle><![CDATA[卡在中間的開發日誌]]></subtitle>
+  <subtitle><![CDATA[開發日誌…]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.kerker.in/"/>
-  <updated>2015-01-19T16:25:00.280Z</updated>
+  <updated>2015-01-20T16:03:10.029Z</updated>
   <id>http://blog.kerker.in/</id>
   
   <author>
@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[Markdown語法筆記]]></title>
-    <link href="http://blog.kerker.in/2015/01/19/Markdown%E8%AA%9E%E6%B3%95%E7%AD%86%E8%A8%98/"/>
-    <id>http://blog.kerker.in/2015/01/19/Markdown語法筆記/</id>
+    <link href="http://blog.kerker.in/4m077e9siqepncla/Markdown%E8%AA%9E%E6%B3%95%E7%AD%86%E8%A8%98/"/>
+    <id>http://blog.kerker.in/4m077e9siqepncla/Markdown語法筆記/</id>
     <published>2015-01-19T15:00:00.000Z</published>
     <updated>2015-01-19T15:32:29.055Z</updated>
     <content type="html"><![CDATA[<p>因為一直記不起來markdown語法，所以決定筆記一篇起來，方便隨時打開就看得到了(有夠懶)…</p>
