@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[卡在中間的開發日誌]]></title>
+  <subtitle><![CDATA[不前不後…卡在中間…]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://blog.kerker.in/"/>
+  <updated>2015-01-26T14:30:16.425Z</updated>
+  <id>http://blog.kerker.in/</id>
+  
+  <author>
+    <name><![CDATA[haubar]]></name>
+    <email><![CDATA[haubarclack@gmail.com]]></email>
+  </author>
+  
+  <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Markdown語法筆記]]></title>
+    <link href="http://blog.kerker.in/uncategorized/Markdown%E8%AA%9E%E6%B3%95%E7%AD%86%E8%A8%98/"/>
+    <id>http://blog.kerker.in/uncategorized/Markdown語法筆記/</id>
+    <published>2015-01-19T15:00:00.000Z</published>
+    <updated>2015-01-19T15:32:29.055Z</updated>
+    <content type="html"><![CDATA[<p>因為一直記不起來markdown語法，所以決定筆記一篇起來，方便隨時打開就看得到了(有夠懶)…</p>
+<h4 id="標題：">標題：</h4>
+<p>井號（#）代表標題，文字前面加上井號就是標題，加了幾個就就是h1的語法標籤的數字大小。</p>
+<h4 id="引言：">引言：</h4>
+<blockquote>
+<p>我是引言 (&gt;)</p>
+</blockquote>
+<h4 id="超連結：">超連結：</h4>
+<p><a href="這裡是link">這邊放連結文字</a></p>
+<h4 id="插入圖片：">插入圖片：</h4>
+<p><img src="https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xfp1/v/t1.0-9/10429318_10202276719829017_5772703987440380953_n.jpg?oh=7c624abbded79de81fcda5ee56ae3816&amp;oe=552A1EFB&amp;__gda__=1432658078_1b4bb00e4401a3c806ac6ca43da1a3a4" alt="連結的語法前面加!就是了"></p>
+<h4 id="清單：">清單：</h4>
+<p>用星號、加號或是減號來表示沒有排序的清單(後面要加空白)</p>
+<ul>
+<li>1</li>
+<li>2</li>
+</ul>
+<p>有順序的清單用數字與一個句號開頭，數字本身可以不需要按照順序，轉換後會自動排序</p>
+<ol>
+<li>一</li>
+<li>三</li>
+<li>四</li>
+</ol>
+<h4 id="強調：">強調：</h4>
+<p><em>斜體字</em><br><strong>粗體字</strong></p>
+<h4 id="分隔線：">分隔線：</h4>
+<hr>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>因為一直記不起來markdown語法，所以決定筆記一篇起來，方便隨時打開就看得到了(有夠懶)…</p>
+<h4 id="標題：">標題：</h4>
+<p>井號（#）代表標題，文字前面加上井號就是標題，加了幾個就就是h1的語法標籤的數字大小。</p>
+<h4 id="引言："]]>
+    </summary>
+    
+      <category term="markdown" scheme="http://blog.kerker.in/tags/markdown/"/>
+    
+  </entry>
+  
+</feed>
