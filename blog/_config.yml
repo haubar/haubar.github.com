@@ -70,7 +70,6 @@ theme: casper
 exclude_generator:
 
 # Deployment
-## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
   repository: git@github.com:haubar/haubar.github.com.git
