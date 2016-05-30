@@ -1,4 +1,4 @@
-baseurl: http://replace-this-with-your-hugo-site.com/
+baseurl: http://blog.kerker.in
 languageCode: en-us
-title: My New Hugo Site
-...
+title: 宅克的坑
+theme: hyde
