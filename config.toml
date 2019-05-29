@@ -1,7 +1,7 @@
 baseurl = "http://haubar.github.io/"
 languagecode = "zh-tw"
 title = "科科的填坑筆記"
-theme = "hugo_theme_robust"
+theme = "hyde"
 
 googleAnalytics = "UA-9060657-2"
 [params]
