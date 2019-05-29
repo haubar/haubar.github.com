@@ -1,5 +1,0 @@
-{{- if .tel -}}
-<i class="fa fa-phone" aria-hidden="true"></i>&nbsp;<a class="tel" href="{{ .tel | safeURL }}">{{ .telephone }}</a>
-{{- else -}}
-<i class="fa fa-phone" aria-hidden="true"></i>&nbsp;<a class="tel" href="tel:{{ .telephone }}">{{ .telephone }}</a>
-{{- end -}}

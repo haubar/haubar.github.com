@@ -1,5 +1,0 @@
-<footer>
-	<a href="{{ .Permalink }}">{{.Date.Format "2006-01-02"}}</a>
-	{{ if .Params.tags }}| in {{ partial "post-tag-list" .Params.tags }}{{ end }}
-	{{ if .Params.authors }}| by {{ partial "post-author-list" .Params.authors }}{{ end }}
-</footer>
