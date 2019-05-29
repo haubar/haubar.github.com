@@ -1,0 +1,17 @@
+{{ define "main" }}
+<main role="main">
+	{{.Content}}
+	{{- range .Paginator.Pages }}
+	<article>
+		<header>
+			<h2><a href="{{.RelPermalink}}">{{.Title}}</a></h2>
+		</header>
+		<div class="content">
+			{{.Content}}
+		</div>
+		{{- partial "post-footer.html" . }}
+	</article>
+	{{- end }}
+	{{ template "_internal/pagination.html" . }}
+</main>
+{{ end }}

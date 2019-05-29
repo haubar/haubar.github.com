@@ -1,0 +1,12 @@
+name        = "Co-op"
+license     = "BSD"
+licenselink = "https://git.sr.ht/~samwhited/co-op/blob/master/LICENSE"
+description = "A small marketing website that doesn't require bulky frameworks."
+homepage    = "https://git.sr.ht/~samwhited/co-op"
+tags        = ["blog", "responsive", "company", "mobile"]
+features    = ["blog", "responsive"]
+min_version = 0.54
+
+[author]
+  name     = "Corner Garage Co-op"
+  homepage = "https://cornergarage.coop"

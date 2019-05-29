@@ -1,0 +1,12 @@
+<section>
+	<div class="hero" style="{{if .Get "bgcolor"}}background-color: {{.Get "bgcolor"}};{{end}}{{if .Get "height"}}min-height: {{.Get "height"}};{{end}}{{ if .Get "img"}}background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('{{ .Get "img" | absURL }}');{{ end }}">
+	<div class="content">
+	{{ .Inner | markdownify }}
+	</div>
+</div>
+{{- if .Get "caption" }}
+<div class="caption">
+	{{ .Get "caption" | markdownify }}
+</div>
+{{- end }}
+</section>

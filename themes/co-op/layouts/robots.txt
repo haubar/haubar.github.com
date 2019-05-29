@@ -1,0 +1,6 @@
+User-agent: *
+{{- range .Pages }}
+{{- if and .Params.nofollow .Params.nofollow }}
+Disallow: {{ .RelPermalink }}
+{{- end }}
+{{- end }}

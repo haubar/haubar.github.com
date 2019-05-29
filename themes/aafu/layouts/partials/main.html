@@ -1,0 +1,34 @@
+<div class="ml-auto mr-auto row row-eq-height mt-4">
+  <div class="col-md-5 text-center border-light p-2  mb-4 bg-white">
+    <div class="float-left" style="width: 45px; height: 45px;">
+      <i
+        class="fas fa-toggle-off zoomlink text-dark"
+        id="toggle"
+        title="Toggle Theme"
+        onclick="toggleTheme()"
+      ></i>
+    </div>
+    {{ partial "profilePhoto" . }}
+    {{ partial "social" . }}
+    {{ partial "footer" . }}
+  </div>
+  <div class="col-md-7 border p-2 mb-4 bg-white">
+    {{ range .Site.Params.showInAccordion }}
+    <h2 class="accordion w-100 text-primary {{ if .expand }} active {{ end }}">
+      {{ $current := index $.Site.Params .item }}
+      <i class="{{ $current.icon }}"></i>
+      {{ $current.title }}
+    </h2>
+    <div class="panel overflow-hidden">
+      {{ partial .item $ }}
+    </div>
+    {{ end }}
+    <script src="{{ .Site.BaseURL }}/js/accordion.js"></script>
+    <script>
+      let isBaseThemeDark = {{ .Site.Params.useDarkTheme }};
+      if (isBaseThemeDark) {
+        toggleTheme();
+      }
+    </script>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+<head>
+  {{ partial "header.html" . }}
+</head>
+
+<body>
+  {{ if isset .Site.Params "nohomebar" }}
+  <!-- No homepage menu bar -->
+  {{ else if .Site.Menus.main }}
+    {{ partial "menu.html" . }}
+  {{ end }}
+  <header style="text-align: center;">
+    {{ partial "site_title.html" . }}
+  <hr />
+  </header>
+  <main>
+  {{ .Content }}
+  </main>
+  <footer>
+    <hr />
+    {{ partial "footer.html" . }}
+  </footer>
+</body>
+</html>

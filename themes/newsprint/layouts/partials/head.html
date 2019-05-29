@@ -1,0 +1,16 @@
+<meta charset="utf-8"/>
+{{ partial "meta.html" . -}}
+
+<title>{{- if not .IsHome -}}{{ .Title }} — {{- end -}}{{ .Site.Title }}</title>
+<link rel="canonical" href="{{ .Permalink }}">
+<link href="/favicon.png" rel="icon"/>
+{{ with .OutputFormats.Get "RSS" }}
+<link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
+<link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
+{{- end -}}
+{{ with .OutputFormats.Get "Atom" }}
+<link href="{{ .RelPermalink }}" rel="alternate" type="application/atom+xml" title="{{ $.Site.Title }}" />
+<link href="{{ .RelPermalink }}" rel="feed" type="application/atom+xml" title="{{ $.Site.Title }}" />
+{{- end -}}
+
+		{{- partial "head_includes.html" . -}}

@@ -1,0 +1,14 @@
+{{ define "main" }}
+<main role="main">
+	{{ if .Title }}
+	<header>
+		<h2>{{.Title}}</h2>
+	</header>
+	{{ end }}
+	{{.Content}}
+	{{- range .Paginator.Pages }}
+	{{.Content}}
+	{{- end }}
+	{{ template "_internal/pagination.html" . }}
+</main>
+{{ end }}

@@ -1,0 +1,46 @@
+{{- with $style := resources.Get "xsl/rss.xsl" | resources.ExecuteAsTemplate "xsl/rss.xsl" . | resources.Fingerprint "sha256"}}
+{{ safeHTML "<?" }}xml-stylesheet type="text/xsl" href="{{ $style.Permalink }}"?>
+{{- end }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  {{ safeHTML "<!--" }}
+    Hi!
+
+    This page is meant to be read by a feed reader program.
+    Using this file updates to our blog can come straight to you without
+    requiring that you visit our web page!
+
+    We recommend using https://www.inoreader.com if you need a web based reader.
+  -->
+  <channel>
+    <title>{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} on {{ end }}{{ .Site.Title }}{{ end }}</title>
+    <link>{{ .Permalink }}</link>
+    <description>Recent posts from {{ if and .Title (ne  .Title  .Site.Title) }}{{ with .Title }}in {{.}} on {{ end }}{{ end }}{{ .Site.Title }}</description>
+    {{- with .Site.Params.logo }}
+    <image>
+      <url>{{ . | absURL }}</url>
+    </image>
+    {{- end }}
+    {{- with .Site.Params.icon }}
+    <atom:icon>{{ . | absURL }}</atom:icon>
+    {{- end }}
+    <generator>Hugo</generator>{{ with .Site.LanguageCode }}
+    <language>{{.}}</language>{{end}}{{ with .Site.Author.email }}
+    <managingEditor>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</managingEditor>{{end}}{{ with .Site.Author.email }}
+    <webMaster>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</webMaster>{{end}}{{ with .Site.Copyright }}
+    <copyright>{{.}}</copyright>{{end}}{{ if not .Date.IsZero }}
+    <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
+    {{ with .OutputFormats.Get "RSS" }}
+        {{- printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
+    {{- end }}
+    {{- range (where .Pages "Section" "post") }}
+    <item>
+      <title>{{ .Title }}</title>
+      <link>{{ .Permalink }}</link>
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      {{ with .Params.author }}<author>{{.}}</author>{{end}}
+      <guid>{{ .Permalink }}</guid>
+      <description>{{ .Content | html }}</description>
+    </item>
+    {{- end }}
+  </channel>
+</rss>
