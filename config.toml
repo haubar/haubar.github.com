@@ -1,41 +1,15 @@
 baseurl = "http://haubar.github.io/"
-languageCode = "zh-tw"
-hasCJKLanguage = true
-disqusShortname = ""
-googleAnalytics = "UA-9060657-2"
+languagecode = "zh-tw"
 title = "科科的填坑筆記"
-copyright = ""
+theme = "hyde"
 
-
+googleAnalytics = "UA-9060657-2"
 [params]
-  googleAutoAds = ""
-  avatar = "https://openclipart.org/download/103855/tux.svg"
-  author = "Your name"
-  info = "Any info about you"
+  dateformat = "Jan 2, 2006" # Optional
+  # Fonts settings.
+  googlefonts = "https://fonts.googleapis.com/css?family=Lobster|Lato:400,700" # Optional, Include google fonts.
+  fontfamily = "Lato,YuGothic,'Hiragino Kaku Gothic Pro',Meiryo,sans-serif" # Optional, Override body font family.
+  logofontfamily = "Lobster, cursive" # Optional, Override logo font.
 
-[[menu.main]]
-  name = "Github"
-  weight = 1
-  url = "https://github.com/haubar"
-
-[[menu.main]]
-  name = "Website"
-  weight = 2
-  url = ""
-
-[[menu.main]]
-  name = "*Apps*"
-  weight = 3
-  url = "/apps"
-
-[[menu.main]]
-  name = "ABOUT"
-  weight = 3
-  url = "/about"
-
-
-[[params.social]]
-  name = "Github"
-  weight = 1
-  url = "https://github.com/haubar"
-
+[outputs]
+page = [ "HTML", "AMP" ] # if you want AMP enable.
