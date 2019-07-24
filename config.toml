@@ -1,4 +1,4 @@
-baseurl = "http://blog.kerker.in"
+baseurl = "https://blog.kerker.in/"
 languagecode = "zh-tw"
 title = "科科的填坑筆記"
 theme = "hyde"
