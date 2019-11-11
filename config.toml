@@ -54,11 +54,16 @@ googleAnalytics = "UA-9060657-2"
     name = "Posts"
     url = "posts/"
     weight = 10
+  
+  [[menu.main]]
+    name = "Projects"
+    url = "projects/"
+    weight = 20
 
   [[menu.main]]
     name = "About"
-    url = "about/"
-    weight = 20
+    url = "about"
+    weight = 30
 
 [outputs]
 page = [ "HTML", "AMP" ] # if you want AMP enable.
