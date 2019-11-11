@@ -1,15 +1,64 @@
-baseurl = "https://blog.kerker.in/"
-languagecode = "zh-tw"
-title = "科科的填坑筆記"
-theme = "hyde"
+baseURL = "https://blog.kerker.in/"
 
+languageCode = "zh-tw"
+title = "科科的填坑筆記"
+theme = "hermit"
+pygmentsCodefences  = true
+pygmentsUseClasses  = true
+rssLimit = 10
+copyright = ""
+enableEmoji = true  
 googleAnalytics = "UA-9060657-2"
+
+[author]
+  name = "haubar"
+
 [params]
-  dateformat = "Jan 2, 2006" # Optional
-  # Fonts settings.
-  googlefonts = "https://fonts.googleapis.com/css?family=Lobster|Lato:400,700" # Optional, Include google fonts.
-  fontfamily = "Lato,YuGothic,'Hiragino Kaku Gothic Pro',Meiryo,sans-serif" # Optional, Override body font family.
-  logofontfamily = "Lobster, cursive" # Optional, Override logo font.
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04 -0700"
+  
+  themeColor = "#494f5c"
+  
+  homeSubtitle = "kerker blog"
+  footerCopyright = ""
+  # bgImg = ""  # Homepage background-image URL
+
+  googlefonts = "https://fonts.googleapis.com/css?family=Lobster|Lato:400,700"
+  
+  justifyContent = false  # Set "text-align: justify" to `.content`.
+  relatedPosts = false  # Add a related content section to all single posts page
+
+  code_copy_button = true # Turn on/off the code-copy-button for code-fields
+  
+  # Add custom css
+  # customCSS = ["css/foo.css", "css/bar.css"]
+
+  #social
+  [[params.social]]
+    name = "twitter"
+    url = "https://twitter.com/"
+
+  [[params.social]]
+    name = "instagram"
+    url = "https://instagram.com/"
+
+  [[params.social]]
+    name = "github"
+    url = "https://github.com/"
+
+[menu]
+  #menu
+  [[menu.main]]
+    name = "Posts"
+    url = "posts/"
+    weight = 10
+
+  [[menu.main]]
+    name = "About"
+    url = "about/"
+    weight = 20
 
 [outputs]
 page = [ "HTML", "AMP" ] # if you want AMP enable.
