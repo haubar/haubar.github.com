@@ -57,12 +57,12 @@ googleAnalytics = "UA-9060657-2"
   
   [[menu.main]]
     name = "Projects"
-    url = "projects/"
+    url = "projects"
     weight = 20
 
   [[menu.main]]
     name = "About"
-    url = "about-note"
+    url = "about"
     weight = 30
 
 [outputs]
