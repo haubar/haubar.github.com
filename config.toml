@@ -36,11 +36,11 @@ googleAnalytics = "UA-9060657-2"
   # customCSS = ["css/foo.css", "css/bar.css"]
 
   #social
-  # [[params.social]]
+  [[params.social]]
   #   name = "twitter"
   #   url = "https://twitter.com/"
 
-  # [[params.social]]
+  [[params.social]]
   #   name = "instagram"
   #   url = "https://instagram.com/"
 
