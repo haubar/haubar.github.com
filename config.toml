@@ -36,17 +36,17 @@ googleAnalytics = "UA-9060657-2"
   # customCSS = ["css/foo.css", "css/bar.css"]
 
   #social
-  [[params.social]]
-    name = "twitter"
-    url = "https://twitter.com/"
+  # [[params.social]]
+  #   name = "twitter"
+  #   url = "https://twitter.com/"
 
-  [[params.social]]
-    name = "instagram"
-    url = "https://instagram.com/"
+  # [[params.social]]
+  #   name = "instagram"
+  #   url = "https://instagram.com/"
 
   [[params.social]]
     name = "github"
-    url = "https://github.com/"
+    url = "https://github.com/haubar"
 
 [menu]
   #menu
