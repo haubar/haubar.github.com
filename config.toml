@@ -37,16 +37,17 @@ googleAnalytics = "UA-9060657-2"
 
   #social
   [[params.social]]
-  #   name = "twitter"
-  #   url = "https://twitter.com/"
-
-  [[params.social]]
-  #   name = "instagram"
-  #   url = "https://instagram.com/"
-
-  [[params.social]]
     name = "github"
     url = "https://github.com/haubar"
+    #[[params.social]]
+    #   name = "twitter"
+    #   url = "https://twitter.com/"
+
+    #[[params.social]]
+    #   name = "instagram"
+    #   url = "https://instagram.com/"
+
+  
 
 [menu]
   #menu
