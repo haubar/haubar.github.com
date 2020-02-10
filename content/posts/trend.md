@@ -7,12 +7,12 @@ tags:
 ---
 
 ### npm trend
-- https://www.npmtrends.com/ 
+- <https://www.npmtrends.com/> 
 
 
 ### google search trend
-- https://trends.google.com/trends
+- <https://trends.google.com/trends>
 
 ### github trend
-- https://github.com/trending
+- <https://github.com/trending>
 
