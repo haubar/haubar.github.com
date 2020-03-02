@@ -16,3 +16,5 @@ tags:
 ### github trend
 - <https://github.com/trending>
 
+### twitch trend
+- <https://twitchtracker.com/statistics>
