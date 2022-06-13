@@ -5,24 +5,23 @@ tags:
   - note
   - laravel
   - model
+  - orm
 ---
-
-#### 整理一些特殊的用法....
  
-  - find
-  > 指定欄位
+- find
+> 指定欄位
   
     $example::find( 666, ['note', 'laravel']);
 
-  - replicate
-  > 複製一個model
+- replicate
+> 複製一個model
   
     $example = Example:find(666);
     $new_example = $example->replicate;
     $new_example->save();
 
-  - is
-  > 判斷model是否相同
+- is
+> 判斷model是否相同
     
     $example = Example::find(666);
     $first_example = Example::find(666);
@@ -32,15 +31,15 @@ tags:
     $example->is($second_example); 
     //結果會是false
 
-  - refresh
-  > 重新載入model
+- refresh
+> 重新載入model
 
     $example = Example::find(666);    
     $example->refresh();
     // 更新最新的model資料
 
-  - push
-  > 更新關聯的model資料
+- push
+> 更新關聯的model資料
 
     $example = Example::find(666);
     $example->title = "第一則";
@@ -50,8 +49,8 @@ tags:
     $example->push(); 
     // 更新 example 與 article 的title
 
-  - getChanges
-  > 查詢更改的資料
+- getChanges
+> 查詢更改的資料
 
     $example = Example::find(666);
     $example->title; 
@@ -61,9 +60,9 @@ tags:
     $example->getChanges());
     // [ 'title' => '原始文章標題' ]
 
-  - getDirty
-  - isDirty
-  > 查詢model是否有被更動
+- getDirty
+- isDirty
+> 查詢model是否有被更動
 
     $example = Example::find(666);
     $example->getDirty();  
@@ -79,8 +78,8 @@ tags:
     $example->isDirty();        
     // false
 
-  - getOriginal
-  > 查詢修改前的model資料
+- getOriginal
+> 查詢修改前的model資料
 
     $example = Example::find(666);
     $example->title;                   
