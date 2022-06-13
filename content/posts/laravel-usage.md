@@ -9,11 +9,13 @@ tags:
 ---
  
 - find
+
 > 指定欄位
   
     $example::find( 666, ['note', 'laravel']);
 
 - replicate
+
 > 複製一個model
   
     $example = Example:find(666);
@@ -21,6 +23,7 @@ tags:
     $new_example->save();
 
 - is
+
 > 判斷model是否相同
     
     $example = Example::find(666);
@@ -32,6 +35,7 @@ tags:
     //結果會是false
 
 - refresh
+
 > 重新載入model
 
     $example = Example::find(666);    
@@ -39,6 +43,7 @@ tags:
     // 更新最新的model資料
 
 - push
+
 > 更新關聯的model資料
 
     $example = Example::find(666);
@@ -50,6 +55,7 @@ tags:
     // 更新 example 與 article 的title
 
 - getChanges
+
 > 查詢更改的資料
 
     $example = Example::find(666);
@@ -61,7 +67,9 @@ tags:
     // [ 'title' => '原始文章標題' ]
 
 - getDirty
+
 - isDirty
+
 > 查詢model是否有被更動
 
     $example = Example::find(666);
@@ -79,6 +87,7 @@ tags:
     // false
 
 - getOriginal
+
 > 查詢修改前的model資料
 
     $example = Example::find(666);
