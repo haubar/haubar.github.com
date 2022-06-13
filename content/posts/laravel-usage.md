@@ -7,11 +7,10 @@ tags:
   - model
 ---
 
-
-  #### 整理一些特殊的用法....
+#### 整理一些特殊的用法....
  
   - find
-  > 指定欄位 
+  > 指定欄位
   
     $example::find( 666, ['note', 'laravel']);
 
@@ -33,8 +32,6 @@ tags:
     $example->is($second_example); 
     //結果會是false
 
-
-
   - refresh
   > 重新載入model
 
@@ -52,7 +49,6 @@ tags:
     // 只更新 example 的 title
     $example->push(); 
     // 更新 example 與 article 的title
-
 
   - getChanges
   > 查詢更改的資料
