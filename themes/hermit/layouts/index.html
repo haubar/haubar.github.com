@@ -14,7 +14,19 @@
 	{{- end }}
 	<div id="spotlight" class="animated fadeIn">
 		<div id="home-center" class="sky day">
-			<!-- 太陽 -->
+			<h1 id="home-title">{{ .Site.Title }}</h1>
+			{{- with .Site.Params.homeSubtitle }}
+			<p id="home-subtitle">{{.}}</p>
+			{{- end }}
+			{{- with .Site.Params.social }}
+			<div id="home-social">
+				{{ partialCached "social-icons.html" . }}
+			</div>
+			{{- end }}
+			<nav id="home-nav" class="site-nav">
+				{{ partialCached "menu.html" . }}
+			</nav>
+					<!-- 太陽 -->
 			<div class="sun"></div>
 
 			<!-- 月亮 -->
@@ -40,18 +52,6 @@
 				<div class="cloud cloud4"></div>
 				<div class="cloud cloud5"></div>
 			</div>
-			<h1 id="home-title">{{ .Site.Title }}</h1>
-			{{- with .Site.Params.homeSubtitle }}
-			<p id="home-subtitle">{{.}}</p>
-			{{- end }}
-			{{- with .Site.Params.social }}
-			<div id="home-social">
-				{{ partialCached "social-icons.html" . }}
-			</div>
-			{{- end }}
-			<nav id="home-nav" class="site-nav">
-				{{ partialCached "menu.html" . }}
-			</nav>
 		</div>
 		<div id="home-footer">
 			<p>
