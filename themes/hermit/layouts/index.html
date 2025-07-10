@@ -13,7 +13,33 @@
 	<div class="bg-img"></div>
 	{{- end }}
 	<div id="spotlight" class="animated fadeIn">
-		<div id="home-center">
+		<div id="home-center" class="sky day">
+			<!-- 太陽 -->
+			<div class="sun"></div>
+
+			<!-- 月亮 -->
+			<div class="moon"></div>
+
+			<!-- 星星 -->
+			<div class="stars">
+				<div class="star star1"></div>
+				<div class="star star2"></div>
+				<div class="star star3"></div>
+				<div class="star star4"></div>
+				<div class="star star5"></div>
+				<div class="star star6"></div>
+				<div class="star star7"></div>
+				<div class="star star8"></div>
+			</div>
+
+			<!-- 雲朵 -->
+			<div class="clouds">
+				<div class="cloud cloud1"></div>
+				<div class="cloud cloud2"></div>
+				<div class="cloud cloud3"></div>
+				<div class="cloud cloud4"></div>
+				<div class="cloud cloud5"></div>
+			</div>
 			<h1 id="home-title">{{ .Site.Title }}</h1>
 			{{- with .Site.Params.homeSubtitle }}
 			<p id="home-subtitle">{{.}}</p>
@@ -35,3 +61,540 @@
 		</div>
 	</div>
 {{ end }}
+
+
+	<style>
+			body {
+				margin: 0;
+				padding: 0;
+				height: 100vh;
+				overflow: hidden;
+				font-family: Arial, sans-serif;
+				transition: all 2s ease-in-out;
+			}
+
+			.sky {
+				position: relative;
+				width: 100%;
+				height: 100vh;
+				transition: all 2s ease-in-out;
+			}
+
+			/* 白天背景 */
+			.sky.day {
+				background: linear-gradient(
+					180deg,
+					#87ceeb 0%,
+					#98d8e8 30%,
+					#b0e0e6 60%,
+					#e0f6ff 100%
+				);
+			}
+
+			/* 夜晚背景 */
+			.sky.night {
+				background: linear-gradient(
+					180deg,
+					#0f1419 0%,
+					#1a202c 30%,
+					#2d3748 60%,
+					#4a5568 100%
+				);
+			}
+
+			/* 太陽 */
+			.sun {
+				position: absolute;
+				width: 120px;
+				height: 120px;
+				background: radial-gradient(
+					circle,
+					#ffd700 0%,
+					#ffa500 70%,
+					#ff8c00 100%
+				);
+				border-radius: 50%;
+				top: 8%;
+				right: 15%;
+				box-shadow: 0 0 50px rgba(255, 215, 0, 0.6);
+				animation: sun-glow 4s infinite ease-in-out;
+				opacity: 1;
+				transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+			}
+
+			.sun::before {
+				content: "";
+				position: absolute;
+				width: 140px;
+				height: 140px;
+				background: radial-gradient(
+					circle,
+					rgba(255, 215, 0, 0.3) 0%,
+					transparent 70%
+				);
+				border-radius: 50%;
+				top: -10px;
+				left: -10px;
+				animation: sun-rays 8s infinite linear;
+			}
+
+			.sky.night .sun {
+				opacity: 0;
+				transform: translateY(100px);
+			}
+
+			@keyframes sun-glow {
+				0%,
+				100% {
+					box-shadow: 0 0 50px rgba(255, 215, 0, 0.6);
+				}
+				50% {
+					box-shadow: 0 0 80px rgba(255, 215, 0, 0.8);
+				}
+			}
+
+			@keyframes sun-rays {
+				0% {
+					transform: rotate(0deg);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+
+			/* 月亮 */
+			.moon {
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				background: radial-gradient(
+					circle at 30% 30%,
+					#fff8dc 0%,
+					#f0e68c 70%,
+					#daa520 100%
+				);
+				border-radius: 50%;
+				top: 10%;
+				right: 20%;
+				box-shadow: 0 0 40px rgba(255, 248, 220, 0.8);
+				animation: moon-glow 6s infinite ease-in-out;
+				opacity: 0;
+				transform: translateY(-100px);
+				transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+			}
+
+			.sky.night .moon {
+				opacity: 1;
+				transform: translateY(0px);
+			}
+
+			@keyframes moon-glow {
+				0%,
+				100% {
+					box-shadow: 0 0 40px rgba(255, 248, 220, 0.8);
+				}
+				50% {
+					box-shadow: 0 0 60px rgba(255, 248, 220, 1);
+				}
+			}
+
+			/* 星星 */
+			.stars {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				opacity: 0;
+				transition: opacity 2s ease-in-out;
+			}
+
+			.sky.night .stars {
+				opacity: 1;
+			}
+
+			.star {
+				position: absolute;
+				background: #fff;
+				border-radius: 50%;
+				animation: twinkle 3s infinite ease-in-out;
+			}
+
+			.star1 {
+				width: 2px;
+				height: 2px;
+				top: 20%;
+				left: 10%;
+				animation-delay: 0s;
+			}
+
+			.star2 {
+				width: 3px;
+				height: 3px;
+				top: 15%;
+				left: 30%;
+				animation-delay: 1s;
+			}
+
+			.star3 {
+				width: 2px;
+				height: 2px;
+				top: 25%;
+				left: 60%;
+				animation-delay: 2s;
+			}
+
+			.star4 {
+				width: 2px;
+				height: 2px;
+				top: 30%;
+				left: 80%;
+				animation-delay: 0.5s;
+			}
+
+			.star5 {
+				width: 3px;
+				height: 3px;
+				top: 40%;
+				left: 20%;
+				animation-delay: 1.5s;
+			}
+
+			.star6 {
+				width: 2px;
+				height: 2px;
+				top: 35%;
+				left: 45%;
+				animation-delay: 2.5s;
+			}
+
+			.star7 {
+				width: 2px;
+				height: 2px;
+				top: 45%;
+				left: 70%;
+				animation-delay: 0.8s;
+			}
+
+			.star8 {
+				width: 3px;
+				height: 3px;
+				top: 50%;
+				left: 15%;
+				animation-delay: 1.8s;
+			}
+
+			@keyframes twinkle {
+				0%,
+				100% {
+					opacity: 0.3;
+				}
+				50% {
+					opacity: 1;
+				}
+			}
+
+			/* 雲朵 */
+			.clouds {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+			}
+
+			.cloud {
+				position: absolute;
+				border-radius: 50px;
+				animation: float 25s infinite linear;
+				transition: all 2s ease-in-out;
+			}
+
+			.cloud:before,
+			.cloud:after {
+				content: "";
+				position: absolute;
+				border-radius: 50px;
+				transition: all 2s ease-in-out;
+			}
+
+			/* 白天雲朵 */
+			.sky.day .cloud {
+				background: rgba(255, 255, 255, 0.9);
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+			}
+
+			.sky.day .cloud:before,
+			.sky.day .cloud:after {
+				background: rgba(255, 255, 255, 0.9);
+			}
+
+			/* 夜晚雲朵 */
+			.sky.night .cloud {
+				background: rgba(80, 80, 80, 0.4);
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+			}
+
+			.sky.night .cloud:before,
+			.sky.night .cloud:after {
+				background: rgba(80, 80, 80, 0.4);
+			}
+
+			.cloud1 {
+				width: 150px; /* 從100px改為150px */
+				height: 75px; /* 從50px改為75px */
+				top: 15%;
+				animation-delay: 0s;
+			}
+
+			.cloud1:before {
+				width: 90px; /* 從60px改為90px */
+				height: 90px; /* 從60px改為90px */
+				top: -45px; /* 從-30px改為-45px */
+				left: 22px; /* 從15px改為22px */
+			}
+
+			.cloud1:after {
+				width: 120px; /* 從80px改為120px */
+				height: 75px; /* 從50px改為75px */
+				top: -30px; /* 從-20px改為-30px */
+				right: 22px; /* 從15px改為22px */
+			}
+
+			.cloud2 {
+				width: 120px; /* 從80px改為120px */
+				height: 60px; /* 從40px改為60px */
+				top: 35%;
+				animation-delay: -8s;
+			}
+
+			.cloud2:before {
+				width: 75px; /* 從50px改為75px */
+				height: 75px; /* 從50px改為75px */
+				top: -37px; /* 從-25px改為-37px */
+				left: 15px; /* 從10px改為15px */
+			}
+
+			.cloud2:after {
+				width: 90px; /* 從60px改為90px */
+				height: 60px; /* 從40px改為60px */
+				top: -22px; /* 從-15px改為-22px */
+				right: 15px; /* 從10px改為15px */
+			}
+
+			.cloud3 {
+				width: 180px; /* 從120px改為180px */
+				height: 90px; /* 從60px改為90px */
+				top: 25%;
+				animation-delay: -15s;
+			}
+
+			.cloud3:before {
+				width: 105px; /* 從70px改為105px */
+				height: 105px; /* 從70px改為105px */
+				top: -52px; /* 從-35px改為-52px */
+				left: 30px; /* 從20px改為30px */
+			}
+
+			.cloud3:after {
+				width: 135px; /* 從90px改為135px */
+				height: 90px; /* 從60px改為90px */
+				top: -37px; /* 從-25px改為-37px */
+				right: 30px; /* 從20px改為30px */
+			}
+
+			.cloud4 {
+				width: 135px; /* 從90px改為135px */
+				height: 67px; /* 從45px改為67px */
+				top: 45%;
+				animation-delay: -20s;
+			}
+
+			.cloud4:before {
+				width: 82px; /* 從55px改為82px */
+				height: 82px; /* 從55px改為82px */
+				top: -40px; /* 從-27px改為-40px */
+				left: 18px; /* 從12px改為18px */
+			}
+
+			.cloud4:after {
+				width: 105px; /* 從70px改為105px */
+				height: 67px; /* 從45px改為67px */
+				top: -25px; /* 從-17px改為-25px */
+				right: 18px; /* 從12px改為18px */
+			}
+
+			.cloud5 {
+				width: 165px; /* 從110px改為165px */
+				height: 82px; /* 從55px改為82px */
+				top: 65%;
+				animation-delay: -25s;
+			}
+
+			.cloud5:before {
+				width: 97px; /* 從65px改為97px */
+				height: 97px; /* 從65px改為97px */
+				top: -48px; /* 從-32px改為-48px */
+				left: 27px; /* 從18px改為 27px */
+			}
+
+			.cloud5:after {
+				width: 127px; /* 從85px改為 127px */
+				height: 82px; /* 從55px改為 82px */
+				top: -33px; /* 從-22px改為 -33px */
+				right: 27px; /* 從18px改為 27px */
+			}
+
+			@keyframes float {
+				0% {
+					left: -150px;
+				}
+				100% {
+					left: calc(100% + 150px);
+				}
+			}
+
+			/* 標題 */
+			.title {
+				position: absolute;
+				top: 20px;
+				left: 50%;
+				transform: translateX(-50%);
+				font-size: 2.5rem;
+				font-weight: bold;
+				z-index: 10;
+				transition: all 2s ease-in-out;
+			}
+
+			.sky.day .title {
+				color: #2c3e50;
+				text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+			}
+
+			.sky.night .title {
+				color: #ffd700;
+				text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+			}
+
+			/* 控制說明 */
+			.controls {
+				position: absolute;
+				bottom: 30px;
+				left: 50%;
+				transform: translateX(-50%);
+				text-align: center;
+				z-index: 10;
+				transition: all 2s ease-in-out;
+			}
+
+			.sky.day .controls {
+				color: #2c3e50;
+				text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+			}
+
+			.sky.night .controls {
+				color: #fff;
+				text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+			}
+
+			.control-key {
+				display: inline-block;
+				background: rgba(255, 255, 255, 0.2);
+				border: 2px solid rgba(255, 255, 255, 0.3);
+				border-radius: 8px;
+				padding: 8px 12px;
+				margin: 0 5px;
+				font-weight: bold;
+				backdrop-filter: blur(10px);
+			}
+
+			/* 時間指示器 */
+			.time-indicator {
+				position: absolute;
+				top: 80px;
+				right: 30px;
+				font-size: 1.2rem;
+				font-weight: bold;
+				z-index: 10;
+				transition: all 2s ease-in-out;
+			}
+
+			.sky.day .time-indicator {
+				color: #ff8c00;
+				text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+			}
+
+			.sky.night .time-indicator {
+				color: #87ceeb;
+				text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+			}
+		</style>
+		<script>
+			const sky = document.getElementById("sky");
+			const timeIndicator = document.getElementById("timeIndicator");
+			const progressBar = document.getElementById("progressBar");
+			const progressText = document.getElementById("progressText");
+			let isDay = true;
+			let autoTimer;
+			let progressTimer;
+			let timeLeft = 30;
+
+			// 啟動自動切換
+			function startAutoSwitch() {
+				clearInterval(autoTimer);
+				clearInterval(progressTimer);
+				timeLeft = 30;
+
+				// 更新進度條
+				progressTimer = setInterval(() => {
+					timeLeft--;
+					const progress = ((30 - timeLeft) / 30) * 100;
+					progressBar.style.width = progress + "%";
+
+					if (timeLeft <= 0) {
+						clearInterval(progressTimer);
+					}
+				}, 1000);
+
+				// 30秒後切換
+				autoTimer = setTimeout(() => {
+					if (isDay) {
+						// switchToNight();
+					} else {
+						// switchToDay();
+					}
+					// startAutoSwitch(); // 重新開始計時
+				}, 30000);
+			}
+
+			// 監聽鍵盤事件
+			document.addEventListener("keydown", function (event) {
+				switch (event.key) {
+					case "ArrowUp":
+						event.preventDefault();
+						if (!isDay) {
+							switchToDay();
+							startAutoSwitch(); // 重新開始計時
+						}
+						break;
+					case "ArrowDown":
+						event.preventDefault();
+						if (isDay) {
+							switchToNight();
+							startAutoSwitch(); // 重新開始計時
+						}
+						break;
+				}
+			});
+
+			function switchToDay() {
+				sky.classList.remove("night");
+				sky.classList.add("day");
+				isDay = true;
+			}
+
+			function switchToNight() {
+				sky.classList.remove("day");
+				sky.classList.add("night");
+				isDay = false;
+			}
+
+			// 頁面載入時啟動自動切換
+			startAutoSwitch();
+		</script>
